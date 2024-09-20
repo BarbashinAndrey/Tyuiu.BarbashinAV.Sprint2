@@ -6,7 +6,7 @@ namespace Tyuiu.BarbashinAV.Sprint2.Task1.V13.Test;
 public class DataServiceTest
 {
     [TestMethod]
-    public void ValidExpression()
+    public void ValidGetLogicOperations()
     {
         var bool_coll = new bool[] { true, true, true, true, true, false };
         CollectionAssert.AreEqual(bool_coll, new DataService().GetLogicOperations(145, 916, 164, 137));
