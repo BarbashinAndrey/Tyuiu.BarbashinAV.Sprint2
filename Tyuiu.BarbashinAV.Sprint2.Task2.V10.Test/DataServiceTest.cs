@@ -6,7 +6,7 @@ namespace Tyuiu.BarbashinAV.Sprint2.Task2.V10.Test;
 public class DataServiceTest
 {
     [TestMethod]
-    public void ValidExpression()
+    public void ValidCheckDotInShadedArea()
     {
         Assert.AreEqual(true, new DataService().CheckDotInShadedArea(6, 8));
     }
