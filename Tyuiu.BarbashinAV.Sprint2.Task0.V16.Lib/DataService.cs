@@ -6,7 +6,7 @@ public class DataService : ISprint2Task0V16
 {
     public bool[] GetCompareOperations(int x, int y)
         => new bool[] {
-            x != y, x == y, x > y, x < y,
-            x >= y, x <= y
+            x == y + 750, x != y + 750, x - 751 < y, x > y + 751,
+            x - 750 <= y, x >= y + 751
         };
 }
