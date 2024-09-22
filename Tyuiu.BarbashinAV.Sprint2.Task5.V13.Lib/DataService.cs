@@ -6,9 +6,6 @@ public class DataService : ISprint2Task5V13
 {
     public string FindDateOfNextDay(int g, int m, int n)
     {
-        // сайт требует ответа в формате дд.мм.гггг
-        // поэтому € не знаю, где тут можно использовать switch)))
-
         if (!(m >= 1 && m <= 12))
             throw new ArgumentException("Ќекорректный номер мес€ца");
 
@@ -16,31 +13,82 @@ public class DataService : ISprint2Task5V13
         if (n > monthesDays[m])
             throw new ArgumentException("Ќекорректное число");
 
+        int next_m = m;
         if (n + 1 > monthesDays[m])
         {
-            m = m >= 12 ? 1 : m + 1;
+            // сайт требует ответа в формате дд.мм.гггг
+            // поэтому € не знаю, где тут можно использовать switch)))
+            // можно, конечно, сделать определение следующего номера мес€ца
+            // через switch, но это будет очень плохой код:
+            switch(m)
+            {
+                case 1:
+                    {
+                        next_m = 2;
+                        break;
+                    }
+                case 2:
+                    {
+                        next_m = 3;
+                        break;
+                    }
+                case 3:
+                    {
+                        next_m = 4;
+                        break;
+                    }
+                case 4:
+                    {
+                        next_m = 5;
+                        break;
+                    }
+                case 5:
+                    {
+                        next_m = 6;
+                        break;
+                    }
+                case 6:
+                    {
+                        next_m = 7;
+                        break;
+                    }
+                case 7:
+                    {
+                        next_m = 8;
+                        break;
+                    }
+                case 8:
+                    {
+                        next_m = 9;
+                        break;
+                    }
+                case 9:
+                    {
+                        next_m = 10;
+                        break;
+                    }
+                case 10:
+                    {
+                        next_m = 11;
+                        break;
+                    }
+                case 11:
+                    {
+                        next_m = 12;
+                        break;
+                    }
+                case 12:
+                    {
+                        next_m = 1;
+                        break;
+                    }
+            }
             n = 1;
         }
         else
         {
             n++;
         }
-        //string month = m switch
-        //{
-        //    1 => "€нвар€",
-        //    2 => "феврал€",
-        //    3 => "марта",
-        //    4 => "апрел€",
-        //    5 => "ма€",
-        //    6 => "июн€",
-        //    7 => "июл€",
-        //    8 => "августа",
-        //    9 => "сент€бр€",
-        //    10 => "окт€бр€",
-        //    11 => "но€бр€",
-        //    12 => "декабр€",
-        //    _ => ""
-        //};
-        return $"{n:D2}.{m:D2}.{g}";
+        return $"{n:D2}.{next_m:D2}.{g}";
     }
 } 
